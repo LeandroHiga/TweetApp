@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+
+    <!-- TITLE -->
+    <title>Tweet App</title>
+
+    <!--CSS STYLE-->
+    <style>
+        body {
+            margin-top: 20px;
+            background: #eee;
+        }
+        
+        .avatar {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            white-space: nowrap;
+            border-radius: 1000px;
+            vertical-align: bottom
+        }
+        
+        .avatar i {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 10px;
+            height: 10px;
+            border: 2px solid #fff;
+            border-radius: 100%
+        }
+        
+        .avatar img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border: 0 none;
+            border-radius: 1000px;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+        }
+        
+        .avatar-online i {
+            background-color: #4caf50
+        }
+        
+        .avatar-off i {
+            background-color: #616161
+        }
+        
+        .avatar-busy i {
+            background-color: #ff9800
+        }
+        
+        .avatar-away i {
+            background-color: #f44336
+        }
+        
+        .avatar-100 {
+            width: 100px
+        }
+        
+        .avatar-100 i {
+            height: 20px;
+            width: 20px
+        }
+        
+        .avatar-lg {
+            width: 50px
+        }
+        
+        .avatar-lg i {
+            height: 12px;
+            width: 12px
+        }
+        
+        .avatar-sm {
+            width: 30px
+        }
+        
+        .avatar-sm i {
+            height: 8px;
+            width: 8px
+        }
+        
+        .avatar-xs {
+            width: 20px
+        }
+        
+        .avatar-xs i {
+            height: 7px;
+            width: 7px
+        }
+        
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+            margin-bottom: -1px;
+            background-color: #fff;
+            border: 1px solid transparent;
+        }
+        /* Solid border */
+        
+        hr.solid {
+            border-top: 3px solid #bbb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/buscador">Tweet App</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/buscador">Buscador <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/historial">Historial</a>
+            </ul>
+        </div>
+    </nav>
+    <!-- END TOP NAVBAR -->
+
+    <br></br>
+
+    <!-- CONTAINER WITH SEARCH BAR-->
+    <div class="container">
+        <div class="input-group"></div>
+        <form class="form-inline" action="/buscador">
+            <!-- ICON BUTTON -->
+            <button class="btn btn-outline-secondary" type="submit">Buscar nueva palabra</button>
+        </form>
+    </div>
+    <!-- END CONTAINER WITH SEARCH BAR -->
+
+    <!--SPACE-->
+    <br>
+
+    <div class="container">
+        <li class="list-group-item">
+            <div class="media">
+                <div class="media-left">
+                    <a class="avatar avatar-busy" href="javascript:void(0)">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="...">
+                        <i></i>
+                    </a>
+                </div>
+                <div class="media-body">
+                    <div>{{ tweets[0] }}</div>
+                </div>
+            </div>
+        </li>
+    </div>
+    <br>
+    <div class="container">
+        <li class="list-group-item">
+            <div class="media">
+                <div class="media-left">
+                    <a class="avatar avatar-busy" href="javascript:void(0)">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="...">
+                        <i></i>
+                    </a>
+                </div>
+                <div class="media-body">
+                    <div>{{ tweets[1] }}</div>
+                </div>
+            </div>
+        </li>
+    </div>
+    <br>
+    <div class="container">
+        <li class="list-group-item">
+            <div class="media">
+                <div class="media-left">
+                    <a class="avatar avatar-busy" href="javascript:void(0)">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="...">
+                        <i></i>
+                    </a>
+                </div>
+                <div class="media-body">
+                    <div>{{ tweets[2] }}</div>
+                </div>
+            </div>
+        </li>
+    </div>
+    <br>
+    <div class="container">
+        <li class="list-group-item">
+            <div class="media">
+                <div class="media-left">
+                    <a class="avatar avatar-busy" href="javascript:void(0)">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="...">
+                        <i></i>
+                    </a>
+                </div>
+                <div class="media-body">
+                    <div>{{ tweets[3] }}</div>
+                </div>
+            </div>
+        </li>
+    </div>
+    <br>
+    <div class="container">
+        <li class="list-group-item">
+            <div class="media">
+                <div class="media-left">
+                    <a class="avatar avatar-busy" href="javascript:void(0)">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="...">
+                        <i></i>
+                    </a>
+                </div>
+                <div class="media-body">
+                    <div>{{ tweets[4] }}</div>
+                </div>
+            </div>
+        </li>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
